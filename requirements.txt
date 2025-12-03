@@ -1,0 +1,9 @@
+pyTelegramBotAPI
+pyautogui
+pillow
+opencv-python
+pywin32
+psutil
+keyboard
+clipboard
+pygame
