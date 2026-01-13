@@ -1,4 +1,4 @@
-pyTelegramBotAPI
+telebot
 pyautogui
 pillow
 opencv-python
@@ -7,3 +7,4 @@ psutil
 keyboard
 clipboard
 pygame
+auto-py-to-exe
