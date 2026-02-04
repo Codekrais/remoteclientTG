@@ -20,7 +20,7 @@ from sys import executable
 from shutil import copy
 from functools import wraps
 
-bot = telebot.TeleBot('')
+bot = telebot.TeleBot(token='')
 adminid = []
 filenamebase = os.path.basename(executable)
 current_file  = executable
@@ -44,10 +44,12 @@ newname = None
 def failcheck(func):
     @wraps(func)
     def wrapper(message,*args, **kwargs):
-        try:
-            func(message,*args,**kwargs)
-        except Exception as e:
-            bot.reply_to(message, e)
+        if message.from_user.id in adminid:
+            try:
+                func(message,*args,**kwargs)
+            except Exception as e:
+                bot.reply_to(message, e)
+        else: bot.reply_to(message, "Вы не админ!")
     return wrapper
 
 
